@@ -3,6 +3,7 @@ import { useState } from 'react';
 export default function CsvReader() {
   const [csvFile, setCsvFile] = useState();
 
+
   const [csvArray, setCsvArray] = useState([]);
   const [csvHeader, setCsvHeader] = useState([]);
 
