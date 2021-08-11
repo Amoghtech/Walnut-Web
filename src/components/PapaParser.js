@@ -3,7 +3,28 @@ import { parse } from 'papaparse';
 import './Papaparser.css';
 import Loader from './Loader';
 
-function Papaparser({ setCsvArray, setCsvHeader, setloader, setamounts }) {
+const monthNames = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
+];
+
+function Papaparser({
+  setCsvArray,
+  setCsvHeader,
+  setloader,
+  setamounts,
+  setcurrmonth,
+}) {
   const [highlighted, sethighlighted] = useState(false);
 
   const [border, setborder] = useState(false);
@@ -75,12 +96,20 @@ function Papaparser({ setCsvArray, setCsvHeader, setloader, setamounts }) {
             }
 
             months.push({ month: m, amount: c });
-            
-            setTimeout(() => {
-                setamounts(months);
-            setCsvArray(res.data);
 
-            setCsvHeader(Object.keys(res.data[0]));
+            setTimeout(() => {
+              const date = new Date();
+              let g;
+              months.forEach((m) => {
+                if (m.month - 1 === date.getMonth()) {
+                  g = m.amount;
+                }
+              });
+              setcurrmonth({ name: monthNames[date.getMonth()], amount: g });
+              setamounts(months);
+              setCsvArray(res.data);
+
+              setCsvHeader(Object.keys(res.data[0]));
               setloader(false);
             }, 2000);
           });

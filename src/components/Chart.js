@@ -1,5 +1,5 @@
 import React from 'react';
-import { Bar } from 'react-chartjs-2';
+import { Bar, Doughnut } from 'react-chartjs-2';
 
 const Chart = (props) => {
   //   const [am,setam]=useState([])
@@ -10,7 +10,6 @@ const Chart = (props) => {
   props.amounts.forEach((a) => {
     temp[a.month - 1] = a.amount;
   });
-  console.log(temp);
   //   setam(temp)
 
   const state = {
@@ -31,7 +30,7 @@ const Chart = (props) => {
     datasets: [
       {
         label: 'Amount/month',
-        backgroundColor: 'rgba(75,192,192,1)',
+        backgroundColor: '#52ffe2',
         borderColor: 'rgba(0,0,0,1)',
         borderWidth: 2,
         data: temp,
@@ -39,22 +38,85 @@ const Chart = (props) => {
     ],
   };
 
+  const state1 = {
+    labels: [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'Aug',
+      'Sep',
+      'Oct',
+      'Nov',
+      'Dec',
+    ],
+    datasets: [
+      {
+        label: 'Amount/month',
+        backgroundColor: [
+          '#03fc7f',
+          '#03fcf0',
+          '#0390fc',
+          '#c603fc',
+          '#ecfc03',
+          "#fc7f03",
+          "#fc0373",
+          "#e803fc",
+          "#97d1d0",
+          "#a0f79c",
+          "#fcd179",
+          "#fa5a5a"
+        ],
+        data: temp,
+      },
+    ],
+  };
+
   return (
     <div>
-      {!props.loader && <Bar
-        data={state}
-        options={{
-          title: {
-            display: true,
-            text: 'Average Rainfall per month',
-            fontSize: 10,
-          },
-          legend: {
-            display: true,
-            position: 'right',
-          },
-        }}
-      />}
+      {!props.loader && props.bar === 1 && (
+        <Bar
+          data={state}
+          width={100}
+          height={400}
+          options={{
+            title: {
+              display: true,
+              text: 'Expense per month',
+              fontSize: 20,
+            },
+            legend: {
+              display: true,
+              position: 'right',
+            },
+            responsive: true,
+            maintainAspectRatio: false,
+          }}
+        />
+      )}
+      {!props.loader && props.bar === 2 && (
+        <Doughnut
+          data={state1}
+          width={100}
+          height={400}
+          options={{
+            title: {
+              display: true,
+              text: 'Expense per month',
+              fontSize: 20,
+            },
+            legend: {
+              display: true,
+              position: 'right',
+            },
+            responsive: true,
+            maintainAspectRatio: false,
+          }}
+        />
+      )}
     </div>
   );
 };

@@ -1,12 +1,12 @@
-import Loader from "./Loader";
-
-
-const Data = ({ csvArray, csvHeader, loader }) => {
+import Loader from './Loader';
+import "./Data.css"
+const Data = ({ csvArray, csvHeader, loader, currmonth }) => {
   return (
     <>
       <div className='list'>
         {csvArray.length > 0 && !loader && (
           <>
+          
             <table>
               <thead>
                 {csvHeader.map((header) => (

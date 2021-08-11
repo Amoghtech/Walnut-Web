@@ -1,0 +1,29 @@
+.icons {
+  display: flex;
+  align-items: center;
+  margin: 5px 0px;
+}
+
+.icons img {
+  margin: 0px 6px;
+}
+
+.details {
+  flex: 0 0 50%;
+}
+.month {
+  padding: 2px 12px;
+  display: flex;
+  margin: 2px 24px;
+}
+
+.month p {
+  margin: auto 27px;
+}
+
+.bars {
+  display: flex;
+  justify-content: flex-end;
+  flex: 0 0 50%;
+}
+

@@ -1,0 +1,21 @@
+.list{
+    list-style: none;
+
+}
+
+.list-item{
+    display: flex;
+justify-content: space-between;
+margin: 5px 25px;
+border:2px solid aqua;
+}
+.list-item h4{
+    margin:auto 6px
+}
+.date-item{
+    margin: 0px 60px;
+}
+
+.date{
+    font-size: 12px;
+}
