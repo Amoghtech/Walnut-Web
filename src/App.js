@@ -9,13 +9,14 @@ import Chart from './components/Chart';
 import { useState } from 'react';
 import Papaparser from './components/PapaParser';
 import Data from './components/Data';
+
 function App() {
   const [amounts, setamounts] = useState([]);
   const [currmonth, setcurrmonth] = useState(null);
   const [changebar, setchangebar] = useState(-1);
   const [csvHeader, setCsvHeader] = useState([]);
   const [csvArray, setCsvArray] = useState([]);
-const [singleitem,setsingleitem]=useState(null)
+  const [singleitem, setsingleitem] = useState(null);
   const [loader, setloader] = useState(false);
 
   return (
@@ -90,8 +91,8 @@ const [singleitem,setsingleitem]=useState(null)
       )}
       {currmonth !== null && !loader && (
         <div className='month'>
-          <p>{currmonth.name}</p>
-          <p>{currmonth.amount}</p>
+          <p>Curr mnth: {currmonth.name}</p>
+          <p>Curr mnth amount: ₹ {currmonth.amount}</p>
         </div>
       )}
       {amounts.length > 0 && !loader && (
@@ -106,7 +107,12 @@ const [singleitem,setsingleitem]=useState(null)
         />
       )}
       {changebar === -1 && !loader && csvArray.length > 0 && (
-        <List csvArray={csvArray} loader={loader} singleitem={singleitem} setsingleitem={setsingleitem} />
+        <List
+          csvArray={csvArray}
+          loader={loader}
+          singleitem={singleitem}
+          setsingleitem={setsingleitem}
+        />
       )}
     </div>
   );

@@ -17,13 +17,12 @@ const monthNames = [
 ];
 
 const List = (props) => {
-  console.log(props.csvArray);
   const clickhandler = (obj) => {
     console.log(obj);
-    props.setsingleitem(obj);
+    // props.setsingleitem(obj);
   };
   let data = props.csvArray.map((obj) => {
-    console.log('obj: ', obj);
+  
     if (obj.DATE === undefined || obj.DATE === '') {
       return null;
     }
@@ -50,7 +49,7 @@ const List = (props) => {
               <p className='date'>
                 {obj.date} - {monthNames[obj.month - 1]}{' '}
               </p>
-              <p className='price'>{obj.price}</p>
+              <p className='price'>₹ {obj.price}</p>
             </div>
           </li>
         ))}

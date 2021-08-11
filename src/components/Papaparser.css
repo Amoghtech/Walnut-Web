@@ -43,8 +43,20 @@
   );
 }
 
+.bdr {
+  border: 3px dotted rgb(0, 255, 221);
+  color: aquamarine;
+}
 
-.bdr{
-    border: 3px dotted rgb(0, 255, 221);
-    color:aquamarine
+.input-ele {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 75px;
+  background: linear-gradient(
+    to bottom right,
+    rgb(215, 217, 221),
+    rgb(230, 230, 230)
+  );
+  margin: 10px 0px;
 }
