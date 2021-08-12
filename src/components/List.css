@@ -6,7 +6,7 @@
   display: flex;
   justify-content: space-between;
   margin: 5px 25px;
-  border: 2px solid aqua;
+  border-bottom: 1px solid black;
 }
 .list-item h4 {
   margin: auto 6px;
@@ -17,4 +17,10 @@
 
 .date {
   font-size: 12px;
+}
+
+
+.atm{
+  display: flex;
+align-items: center;
 }

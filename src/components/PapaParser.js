@@ -30,6 +30,8 @@ function Papaparser({
   const [border, setborder] = useState(false);
   const handleChange = async (e) => {
     setloader(true);
+    
+          sethighlighted(true);
     let file = e.target.files[0];
     const str = await file.text();
     let temp = str;
@@ -179,16 +181,14 @@ function Papaparser({
           });
         }}
       >
-        DROP HERE
-      </div>
-      <div className="input-ele">
       <input
         className='csv-input'
         type='file'
         name='file'
         onChange={handleChange}
-      />
+      /> or &nbsp;&nbsp;&nbsp;  DROP HERE
       </div>
+   
     </div>
   );
 }

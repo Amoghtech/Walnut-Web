@@ -6,6 +6,7 @@ import listi from './icons/list.png';
 import './App.css';
 import List from './components/List';
 import Chart from './components/Chart';
+import Home from './components/Home';
 import { useState } from 'react';
 import Papaparser from './components/PapaParser';
 import Data from './components/Data';
@@ -114,6 +115,7 @@ function App() {
           setsingleitem={setsingleitem}
         />
       )}
+      {csvArray.length===0 && <Home/>}
     </div>
   );
 }
