@@ -186,7 +186,7 @@ function Papaparser({
         type='file'
         name='file'
         onChange={handleChange}
-      /> or &nbsp;&nbsp;&nbsp;  DROP HERE
+      />&nbsp;&nbsp;&nbsp; or &nbsp;&nbsp;&nbsp;  DROP HERE
       </div>
    
     </div>
