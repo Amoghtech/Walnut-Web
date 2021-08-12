@@ -1,0 +1,9 @@
+.notify {
+  margin: 30px 9rem;
+}
+
+@media screen and (max-width: 768px) {
+  .notify {
+    margin: 30px 50px;
+  }
+}

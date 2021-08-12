@@ -1,6 +1,6 @@
 import im from '../images/step-1.png';
 import play from '../images/google-play.png';
-
+import "./Home.css"
 const Home = () => {
   return (
     <div
@@ -11,9 +11,9 @@ const Home = () => {
         alignItems: 'center',
       }}
     >
-      <h2>How to export data from Walnut app?</h2>
+      <h2 style={{margin:"3rem 15px"}}>How to export data from Walnut app?</h2>
       <img src={im} style={{width:"350px",height:"350px"}} alt='Screenshot' />
-      <p style={{margin:"30px 9rem"}}>
+      <p className="notify">
         You can now export your data from the app. Tap on the filter icon that
         appears on the top right of your screen when viewing your spends for a
         month, account information or tags. Select the date range, review the
